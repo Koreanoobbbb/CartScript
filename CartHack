@@ -1,0 +1,37 @@
+local function Up()
+    for i, v in pairs(game:GetDescendants()) do
+        if v:IsA("ClickDetector") and v.Parent.Name == "Up" then
+            fireclickdetector(v)
+        end
+    end
+end
+
+local function On()
+    for i, v in pairs(game:GetDescendants()) do
+        if v:IsA("ClickDetector") and v.Parent.Name == "On" then
+            fireclickdetector(v)
+        end
+    end
+end
+local function Down()
+    for i, v in pairs(game:GetDescendants()) do
+        if v:IsA("ClickDetector") and v.Parent.Name == "Down" then
+            fireclickdetector(v)
+        end
+    end
+end
+
+local function CartSpawn()
+    for i, v in pairs(game:GetDescendants()) do
+        if v:IsA("ClickDetector") and v.Parent.Name:find("Regen") then
+            fireclickdetector(v)
+        end
+    end
+end
+
+while wait(0.5) do
+    Up()
+    On()
+    CartSpawn()
+    Down()
+end
